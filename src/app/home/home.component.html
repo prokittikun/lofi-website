@@ -1,0 +1,54 @@
+<video autoplay="autoplay" loop="loop" [muted]="'muted'" id="myVideo">
+  <source src="../assets/bg/bg.mp4" type="video/mp4">
+</video>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-4">
+      <!-- <div class="text-center">
+        <div style="margin-top: 40%">
+          <button class="btn btn-primary"></button>
+        </div>
+      </div> -->
+    </div>
+    <div class="col-xl-4">
+      <div class="text-center">
+        <div style="margin-top: 40%;margin-right: 80%;">
+          <ul class="wrapper">
+            <li class="icon facebook">
+              <span class="tooltip text-center">
+                Rain
+                <ng-container *ngFor="let x of soundObj">
+                  <div class="" *ngIf="x.name === 'rain' && x.status === true">
+                    <input [value]="x.volume" [(ngModel)]="x.volume" type="range" max="1" min="0" step="0.01"
+                      (input)="onchangeVolume('rain')" class="form-range">
+                  </div>
+                </ng-container>
+              </span>
+              <span (click)="changeStatusObject('rain')"><i class="fas fa-cloud-rain"></i></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="text-center">
+        <div style="margin-top: 95%;margin-left: 40%;">
+          <ul class="wrapper">
+            <li class="icon facebook">
+              <span class="tooltip text-center">
+                Burn
+                <ng-container *ngFor="let x of soundObj">
+                  <div class="" *ngIf="x.name === 'burn' && x.status === true">
+                    <input [value]="x.volume" [(ngModel)]="x.volume" type="range" max="1" min="0" step="0.01"
+                      (input)="onchangeVolume('burn')" class="form-range">
+                  </div>
+                </ng-container>
+              </span>
+              <span (click)="changeStatusObject('burn')"><i class="fas fa-burn fa-lg"></i></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
